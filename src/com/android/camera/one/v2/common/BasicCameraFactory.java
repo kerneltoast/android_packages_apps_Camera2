@@ -94,20 +94,20 @@ public class BasicCameraFactory {
         requestTemplate.setParam(
               CaptureRequest.CONTROL_AE_EXPOSURE_COMPENSATION, exposure);
 
-        Supplier<FaceDetectMode> faceDetectMode = Suppliers.ofInstance(
-              FaceDetect.getHighestFaceDetectMode(cameraCharacteristics));
-
-        requestTemplate.setParam(CaptureRequest.CONTROL_MODE,
-              new ControlModeSelector(hdrSceneSetting,
-                    faceDetectMode,
-                    cameraCharacteristics.getSupportedHardwareLevel()));
-        requestTemplate.setParam(
-              CaptureRequest.CONTROL_SCENE_MODE, new ControlSceneModeSelector(
-                    hdrSceneSetting,
-                    faceDetectMode,
-                    cameraCharacteristics.getSupportedHardwareLevel()));
-        requestTemplate.setParam(CaptureRequest.STATISTICS_FACE_DETECT_MODE,
-              new StatisticsFaceDetectMode(faceDetectMode));
+        //Supplier<FaceDetectMode> faceDetectMode = Suppliers.ofInstance(
+        //      FaceDetect.getHighestFaceDetectMode(cameraCharacteristics));
+        //
+        //requestTemplate.setParam(CaptureRequest.CONTROL_MODE,
+        //      new ControlModeSelector(hdrSceneSetting,
+        //            faceDetectMode,
+        //            cameraCharacteristics.getSupportedHardwareLevel()));
+        //requestTemplate.setParam(
+        //      CaptureRequest.CONTROL_SCENE_MODE, new ControlSceneModeSelector(
+        //            hdrSceneSetting,
+        //            faceDetectMode,
+        //            cameraCharacteristics.getSupportedHardwareLevel()));
+        //requestTemplate.setParam(CaptureRequest.STATISTICS_FACE_DETECT_MODE,
+        //      new StatisticsFaceDetectMode(faceDetectMode));
 
         Supplier<Rect> cropRegion = new ZoomedCropRegion(
                 cameraCharacteristics.getSensorInfoActiveArraySize(), zoom);
