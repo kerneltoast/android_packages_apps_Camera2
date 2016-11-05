@@ -154,6 +154,21 @@ public class BasicCameraFactory {
         requestTemplate.setParam(CaptureRequest.CONTROL_AE_REGIONS, aeRegions);
         requestTemplate.setParam(CaptureRequest.CONTROL_AF_REGIONS, afRegions);
 
+        requestTemplate.setParam(CaptureRequest.COLOR_CORRECTION_MODE,
+                CaptureRequest.COLOR_CORRECTION_MODE_HIGH_QUALITY);
+        requestTemplate.setParam(CaptureRequest.COLOR_CORRECTION_ABERRATION_MODE,
+                CaptureRequest.COLOR_CORRECTION_ABERRATION_MODE_HIGH_QUALITY);
+        requestTemplate.setParam(CaptureRequest.EDGE_MODE,
+                CaptureRequest.EDGE_MODE_HIGH_QUALITY);
+        requestTemplate.setParam(CaptureRequest.HOT_PIXEL_MODE,
+                CaptureRequest.HOT_PIXEL_MODE_HIGH_QUALITY);
+        requestTemplate.setParam(CaptureRequest.NOISE_REDUCTION_MODE,
+                CaptureRequest.NOISE_REDUCTION_MODE_HIGH_QUALITY);
+        requestTemplate.setParam(CaptureRequest.TONEMAP_MODE,
+                CaptureRequest.TONEMAP_MODE_HIGH_QUALITY);
+        requestTemplate.setParam(CaptureRequest.SHADING_MODE,
+                CaptureRequest.SHADING_MODE_HIGH_QUALITY);
+
         mMeteredZoomedRequestBuilder = requestTemplate;
     }
 
