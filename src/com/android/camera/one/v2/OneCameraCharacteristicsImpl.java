@@ -115,7 +115,7 @@ public class OneCameraCharacteristicsImpl implements OneCameraCharacteristics {
 
     @Override
     public float getAvailableMaxDigitalZoom() {
-        return mCameraCharacteristics.get(CameraCharacteristics.SCALER_AVAILABLE_MAX_DIGITAL_ZOOM);
+        return 2.0f;//mCameraCharacteristics.get(CameraCharacteristics.SCALER_AVAILABLE_MAX_DIGITAL_ZOOM);
     }
 
     @Override
