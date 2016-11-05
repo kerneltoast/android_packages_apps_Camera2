@@ -70,10 +70,10 @@
       android:key="pref_category_advanced"
       android:title="@string/pref_category_advanced" >
     <!-- Exposure Compensation -->
-    <com.android.camera.settings.ManagedSwitchPreference
+    <!--com.android.camera.settings.ManagedSwitchPreference
         android:defaultValue="false"
         android:key="pref_camera_exposure_compensation_key"
-        android:title="@string/pref_camera_exposure_compensation" />
+        android:title="@string/pref_camera_exposure_compensation" /-->
     <!-- Power button shutter -->
     <com.android.camera.settings.ManagedSwitchPreference
         android:key="pref_power_shutter"
