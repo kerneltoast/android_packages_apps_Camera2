@@ -44,6 +44,8 @@ import com.google.common.util.concurrent.ListenableFuture;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -180,7 +182,11 @@ class ConvergedImageCaptureCommand implements ImageCaptureCommand {
                 FrameServer.RequestType.NON_REPEATING);
 
         // Wait until the ae state converges to a result.
-        aeStateMachine.get();
+        try {
+            aeStateMachine.get(1000, TimeUnit.MILLISECONDS);
+        } catch (TimeoutException e) {
+            return;
+        }
     }
 
     private void captureBurst(FrameServer.Session session, ImageStream imageStream, Updatable<Void>
